@@ -51,12 +51,24 @@ for the MCMC algorithm. However, random initial values should also work.
 - **nrep**: Number of iterations after burn-in
 - **nthin**: Number of thinning iterations
 
-## Usage
-
-To run this code, the IMSL library is required. Ensure that the library is installed and properly 
-configured before running the model.
-
 ## Baseline Hazard Function
 
 The model considers different baseline hazard functions for each event time. 
 For each $k$, $n_{g_k}$ indicates the number of pieces for the baseline hazard function, for $k=0, 1, 2, 3, 4$.
+
+## Usage
+
+- The main files
+  + `main.f`: main functions
+  + `gibbs.f`: functions for MCMC sampling
+  + `exampledat.txt`: example data to run the model
+- Additional files
+  + `optim1.f`: for optimization
+  + `gilks2.f`: function to compute adaptive rejection sampling
+  + `hpd.f`: for computing highest posterior density
+  
+Keeping all the files in the same directory, run the `main.f` function. 
+The IMSL library is required to run this code. Please ensure that the library is installed and properly 
+configured before running the model.
+
+
